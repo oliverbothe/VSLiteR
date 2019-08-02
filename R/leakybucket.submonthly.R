@@ -100,7 +100,7 @@ leakybucket.submonthly <- function(syear,eyear,phi,T,P,Mmax = 0.76,Mmin = 0.01,a
       
       ##### Compute potential evapotranspiration for current month after Thornthwaite:
       if (T[t,cyear] < 0){Ep <- 0;}
-      if (T(t,cyear) >= 0 && T(t,cyear) < 26.5){Ep <- 16*L[t]*(10*T[t,cyear]/I)^a;}
+      if (T[t,cyear] >= 0 && T[t,cyear] < 26.5){Ep <- 16*L[t]*(10*T[t,cyear]/I)^a;}
       if (T[t,cyear] >= 26.5){Ep <- -415.85 + 32.25*T[t,cyear] - .43* T[t,cyear]^2;}
       potEv[t,cyear] <- Ep;
       
